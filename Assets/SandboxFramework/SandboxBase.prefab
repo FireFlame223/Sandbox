@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8612214027620538447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986568884109173890}
+  - component: {fileID: 1858071841873143336}
+  - component: {fileID: 7801057382709454501}
+  - component: {fileID: 5251035550843937366}
+  - component: {fileID: 6690997582921729833}
+  - component: {fileID: 7191963667568335038}
+  - component: {fileID: 4401835293047107363}
+  - component: {fileID: 2150696668866276256}
+  m_Layer: 0
+  m_Name: SandboxBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &986568884109173890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612214027620538447}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1858071841873143336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612214027620538447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4321472da242e4b1e8ad1658c497e601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionLayerName: Selection
+  raycastDistance: 8
+--- !u!114 &7801057382709454501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612214027620538447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb192265817c44b69d710b1fb7ca9e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useGrid: 1
+  gridSize: {x: 0.25, y: 0.25, z: 0.25}
+  gridCenter: {x: 0, y: 0.5, z: 0}
+  allowRotation: 0
+  rotationSnapDegrees: {x: 0, y: 0, z: 0}
+  rigidbodyStateChangeOnDrag: 1
+  rigidbodyStateChangeOnRelease: 2
+  throwMultiplier: 1.5
+  maxThrowVelocity: 15
+  useRotationKey1: 1
+  useRotationKey2: 1
+--- !u!114 &5251035550843937366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612214027620538447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c650326713bd437fb484b92a493c56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeldProximityThreshold: 0.01
+  weldingType: 1
+--- !u!114 &6690997582921729833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612214027620538447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931dad9435eae4a148a26a3d57ebf36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyEvents: []
+  steeringSettings:
+    invert: 0
+    makeAbsolute: 0
+    cutoffMin: -1
+    cutoffMax: 1
+    mappingMin: -1
+    mappingMax: 1
+  onSteer:
+    m_PersistentCalls:
+      m_Calls: []
+  throttlingSettings:
+    invert: 0
+    makeAbsolute: 0
+    cutoffMin: 0
+    cutoffMax: 1
+    mappingMin: 0
+    mappingMax: 1
+  onThrottle:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSeat:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onUnseat:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onWheelPosition: []
+--- !u!114 &7191963667568335038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612214027620538447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764b992b0d048450da794246e3861694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCapsule: {fileID: 0}
+  scriptsToAdd:
+  - PlayerCollisionTrigger
+  - KeepUpright
+--- !u!114 &4401835293047107363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612214027620538447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee15dd65b36d84aa4a8763f0b1118ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineCamera: {fileID: 0}
+  characterController: {fileID: 0}
+--- !u!114 &2150696668866276256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612214027620538447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fae66fff720342098ac91ef498728ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineCameraPrefab: {fileID: 5656107871406623177, guid: 5e0bacfe7798a438daf3695d364589e4, type: 3}
