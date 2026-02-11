@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 3091011075316071155}
   - component: {fileID: 3718565676358141749}
   - component: {fileID: 7240738462629113754}
-  - component: {fileID: 795296208034965462}
-  - component: {fileID: 5536308115911090803}
-  - component: {fileID: 2565845039133933567}
+  - component: {fileID: 8688168809083138242}
+  - component: {fileID: 6629232682675855172}
+  - component: {fileID: 405717503305980884}
   m_Layer: 0
-  m_Name: Silver
+  m_Name: Pref15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,10 +65,12 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 53b84454e5a494e4da0690733359332d, type: 2}
+  - {fileID: 2100000, guid: d7bfc660934d51540aaef7f8cc553f54, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,6 +88,7 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -111,7 +114,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &795296208034965462
+--- !u!114 &8688168809083138242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14a531c091ed47028b32c51846c2dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectDescription: a silver block
---- !u!114 &5536308115911090803
+  objectDescription: a gold block
+--- !u!114 &6629232682675855172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,10 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1d8073f11874480a95687decfaf2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RemoveFromParentOnStart: 1
   shouldPropagateDragEvents: 1
   shouldIgnoreRigidbodySettingFromDragger: 0
---- !u!54 &2565845039133933567
+  removeFromParentAtAwake: 0
+--- !u!54 &405717503305980884
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
