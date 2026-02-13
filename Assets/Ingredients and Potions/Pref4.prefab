@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14a531c091ed47028b32c51846c2dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectDescription: a gold block
+  objectDescription: a Pref4
 --- !u!114 &6629232682675855172
 MonoBehaviour:
   m_ObjectHideFlags: 0
