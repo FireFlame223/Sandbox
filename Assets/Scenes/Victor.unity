@@ -3615,6 +3615,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1858071841873143336, guid: fd2486027d9f1403dbc13912326d3e13, type: 3}
+      propertyPath: raycastDistance
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5251035550843937366, guid: fd2486027d9f1403dbc13912326d3e13, type: 3}
       propertyPath: weldingType
       value: 1
