@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/// <summary>
 /// Handles effects when recipes are matched in CraftingArea.
 /// Disables all previous audio/animation/skin effects and applies the selected one.
 /// In RecipeTrigger, call ApplyEffect(label) with the effect's label (e.g. "Pref6") or ApplyEffect(index) with its index.
-/// </summary>
 public class CraftingEffectController : MonoBehaviour
 {
     [Serializable]
@@ -52,9 +50,7 @@ public class CraftingEffectController : MonoBehaviour
 
     private Transform _effectiveAudioRoot;
 
-    /// <summary>
     /// Cached default local transform per model (instance ID), so we can restore when override is disabled.
-    /// </summary>
     private readonly Dictionary<int, (Vector3 position, Quaternion rotation, Vector3 scale)> _defaultModelTransforms = new Dictionary<int, (Vector3, Quaternion, Vector3)>();
 
     private void Awake()
@@ -62,10 +58,8 @@ public class CraftingEffectController : MonoBehaviour
         _effectiveAudioRoot = audioPlayersRoot; // null = search whole scene for *Player objects
     }
 
-    /// <summary>
     /// Call this from a recipe's OnRecipeMatched event. Finds the effect with the given label and applies it.
     /// Label comparison is case-insensitive. Does nothing if no effect has that label.
-    /// </summary>
     public void ApplyEffect(string label)
     {
         if (effects == null || string.IsNullOrEmpty(label)) return;
@@ -81,9 +75,7 @@ public class CraftingEffectController : MonoBehaviour
         }
     }
 
-    /// <summary>
     /// Applies the effect at the given index (0, 1, 2, ...). Use ApplyEffect(label) to apply by label instead.
-    /// </summary>
     public void ApplyEffect(int index)
     {
         if (effects == null || index < 0 || index >= effects.Count) return;
@@ -92,10 +84,8 @@ public class CraftingEffectController : MonoBehaviour
         ApplyEffectEntry(effects[index]);
     }
 
-    /// <summary>
     /// Disable all GameObjects whose name ends with "Player" (and mute their AudioSources).
     /// If audioPlayersRoot is set, searches under it; otherwise searches the whole scene.
-    /// </summary>
     public void DisableAllAudioPlayers()
     {
         if (_effectiveAudioRoot != null)
@@ -146,9 +136,7 @@ public class CraftingEffectController : MonoBehaviour
         ApplyParticle(entry.particleToEnable);
     }
 
-    /// <summary>
     /// Disable all particle systems that are assigned in any effect, so only the current effect's particle is visible.
-    /// </summary>
     private void DisableAllEffectParticles()
     {
         if (effects == null) return;
@@ -180,9 +168,7 @@ public class CraftingEffectController : MonoBehaviour
         }
     }
 
-    /// <summary>
     /// Find first transform in the active scene whose name matches (case-insensitive).
-    /// </summary>
     private static Transform FindInScene(string name)
     {
         var scene = SceneManager.GetActiveScene();
@@ -196,9 +182,7 @@ public class CraftingEffectController : MonoBehaviour
         return null;
     }
 
-    /// <summary>
     /// Find first transform under root whose name matches (direct or nested).
-    /// </summary>
     private static Transform FindRecursive(Transform root, string name)
     {
         if (root == null || string.IsNullOrEmpty(name)) return null;
@@ -212,9 +196,7 @@ public class CraftingEffectController : MonoBehaviour
         return null;
     }
 
-    /// <summary>
     /// Play animation by state name on the given model's Animator (each model has its own Animator).
-    /// </summary>
     private void ApplyAnimation(string stateName, Transform model)
     {
         if (model == null || string.IsNullOrEmpty(stateName)) return;
@@ -224,9 +206,7 @@ public class CraftingEffectController : MonoBehaviour
             animator.Play(stateName);
     }
 
-    /// <summary>
     /// Apply transform override, or restore the model's default local transform when override is disabled.
-    /// </summary>
     private void ApplyModelTransform(EffectEntry entry)
     {
         if (entry == null || entry.modelToShow == null) return;
@@ -250,10 +230,8 @@ public class CraftingEffectController : MonoBehaviour
             model.localScale = defaultTransform.scale;
         }
     }
-
-    /// <summary>
+    
     /// Enable the selected model, disable its siblings (other models under the same parent).
-    /// </summary>
     private void ApplySkin(Transform modelToShow)
     {
         if (modelToShow == null) return;
