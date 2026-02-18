@@ -2898,7 +2898,6 @@ Transform:
   m_Children:
   - {fileID: 752849210}
   - {fileID: 776928008}
-  - {fileID: 1121135761}
   m_Father: {fileID: 810871311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &700017157
@@ -3348,9 +3347,7 @@ PrefabInstance:
         'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
         'mixamorig:LeftHandPinky2'\n\tTransform 'mixamorig:RightHandRing2'\n\tTransform
         'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:LeftHandThumb3'\n\tTransform
-        'mixamorig:RightArm'\n\tand more ...\n\tFrom animation clip 'Climb'\n\tFrom
-        animation clip 'Jump Down'\n\tFrom animation clip 'Mutant Jump'\n\tFrom animation
-        clip 'Dance'"
+        'mixamorig:RightArm'\n\tand more ...\n\tFrom animation clip 'Mutant Jump'"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3784,6 +3781,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1702998318}
+  - {fileID: 1121135761}
   - {fileID: 700017156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4582,9 +4580,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121135760}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9155946, y: 0.59761137, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1451090038}
@@ -4594,7 +4592,7 @@ Transform:
   - {fileID: 1643184777}
   - {fileID: 840506645}
   - {fileID: 1372543040}
-  m_Father: {fileID: 700017156}
+  m_Father: {fileID: 810871311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1129474394 stripped
 Transform:
