@@ -128,7 +128,6 @@ public class RecipeTrigger : MonoBehaviour
         }
     }
 
-
     private bool RecipeMatches(Recipe recipe, out List<Collider> usedColliders)
     {
         // Ingredient aliases table (canonical -> alternatives)
@@ -140,57 +139,6 @@ public class RecipeTrigger : MonoBehaviour
         { "Pref4", new[] { "Poop4" } }
     };
 
-        List<Collider> available = new List<Collider>(collidersInTrigger);
-        usedColliders = new List<Collider>();
-
-        foreach (var ingredient in recipe.ingredients)
-        {
-            string target = ingredient.ToLowerInvariant();
-
-            // Get valid names for this ingredient
-            string[] validNames;
-            if (!ingredientAliases.TryGetValue(target, out validNames))
-            {
-                // No aliases defined → fall back to exact match
-                validNames = new[] { target };
-            }
-
-            bool found = false;
-
-            for (int i = 0; i < available.Count; i++)
-            {
-                var col = available[i];
-                if (col == null || col.gameObject == null)
-                    continue;
-
-                if (lockedColliders.Contains(col))
-                    continue;
-
-                string objectName = col.gameObject.name;
-
-                for (int j = 0; j < validNames.Length; j++)
-                {
-                    if (objectName.Equals(validNames[j], StringComparison.OrdinalIgnoreCase))
-                    {
-                        usedColliders.Add(col);
-                        available.RemoveAt(i); // consume collider
-                        found = true;
-                        break;
-                    }
-                }
-
-                if (found)
-                    break;
-            }
-
-            if (!found)
-                return false; // missing ingredient
-        }
-
-        return true;
-    }
-    private bool RecipeMatchesOld(Recipe recipe, out List<Collider> usedColliders)
-    {
         List<Collider> available = new List<Collider>(collidersInTrigger);
         usedColliders = new List<Collider>();
 
